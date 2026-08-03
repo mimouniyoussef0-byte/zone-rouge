@@ -1,6 +1,8 @@
 # ZONE ROUGE — Perpignan Survie · carte du fichier
 
-Relevé fait sur la v243 (`zone-rouge.html`, 29 865 lignes, 10,73 Mo).
+Relevé fait sur la v243 (`index.html`, 29 865 lignes, 10,73 Mo).
+Le fichier s'appelle `index.html` parce qu'un hébergeur sert automatiquement
+ce nom-là à la racine : l'adresse du jeu est donc le domaine seul, sans chemin.
 **Les numéros de ligne se décalent à chaque modification.** Avant de t'y fier,
 vérifie avec une recherche sur le titre de la section (`grep` ou Ctrl+F sur
 `================= NOM =================`).
