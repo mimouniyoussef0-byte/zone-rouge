@@ -1,0 +1,17 @@
+# OneDrive / Windows
+desktop.ini
+Thumbs.db
+*~
+*.tmp
+
+# sauvegardes manuelles : git s'en charge maintenant
+*-FINAL*.html
+*-CORRIGE*.html
+*-ULTIME*.html
+*copie*.html
+*(1).html
+*(2).html
+
+# outillage futur
+node_modules/
+dist/

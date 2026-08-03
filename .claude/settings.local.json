@@ -1,0 +1,8 @@
+{
+  "permissions": {
+    "allow": [
+      "Read(//c/Users/youss/Downloads/**)",
+      "Bash(grep -n -o -E '<\\(script|style|canvas|div id=\"[^\"]*\"|section id=\"[^\"]*\"\\)[^>]{0,80}' perpignan_didacticiel.html)"
+    ]
+  }
+}
