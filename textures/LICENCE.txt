@@ -26,3 +26,4 @@ Poly Haven place toute sa bibliotheque en CC0 (https://polyhaven.com/license).
 A noter : l'API ne publie AUCUN champ "license" par asset — la garantie est
 au niveau du site, pas de la fiche. Le champ "license" du swagger vaut AGPL
 et concerne le code de l'API, pas les textures.
+stone_tile_wall       Poly Haven, CC0 — pierre de taille des monuments, 2,00 m
