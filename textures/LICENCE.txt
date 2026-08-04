@@ -29,3 +29,5 @@ et concerne le code de l'API, pas les textures.
 stone_tile_wall       Poly Haven, CC0 — pierre de taille des monuments, 2,00 m
 plastered_wall        Poly Haven, CC0 — crepi des façades (3 cartes), 2,00 m
 painted_plaster_wall  Poly Haven, CC0 — candidat mesure, conserve en reserve
+plastered_wall (2K)   Poly Haven, CC0 — crepi des façades, densite 1024 px/m
+stone_tile_wall (2K)  Poly Haven, CC0 — pierre des monuments, densite 1024 px/m
