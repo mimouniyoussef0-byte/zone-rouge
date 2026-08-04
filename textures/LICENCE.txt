@@ -1,0 +1,17 @@
+Textures Poly Haven — CC0 (domaine public)
+
+  cobblestone_floor_01   pave des places et des ruelles
+  beige_wall_001         pierre de taille des monuments
+  brick_4                brique (en reserve)
+
+Source   : https://polyhaven.com
+Licence  : CC0 1.0 Universal — domaine public.
+           Usage commercial libre, aucune attribution exigee,
+           aucune redistribution restreinte.
+
+Telechargees en 1K JPG : couleur (diff), normale OpenGL (nor_gl),
+rugosite (rough). Trois cartes par matiere, neuf fichiers, 2,9 Mo.
+
+Elles ne sont PAS embarquees dans index.html : en base64 elles
+pesteraient un tiers de plus et il faudrait les decoder a chaque
+demarrage. Servies a cote, le navigateur les met en cache.

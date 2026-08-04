@@ -23,3 +23,7 @@ capture*.txt
 
 # assets de travail, non versionnes
 _assets/
+
+# ...sauf les textures du jeu, qui sont des donnees
+!textures/
+!textures/*.jpg
