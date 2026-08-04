@@ -20,3 +20,6 @@ dist/
 *.jpg
 *.png
 capture*.txt
+
+# assets de travail, non versionnes
+_assets/
