@@ -76,6 +76,41 @@ while ($true) {
     $morceaux = $premiere -split " "
     if ($morceaux.Count -lt 2) { $client.Close(); continue }
 
+    # ---------------------------------------------------------------
+    #  POST /capture : le navigateur renvoie une image rendue hors ecran.
+    #  C'est la voie de retour qui permet de VOIR ce que le code fabrique
+    #  au lieu de le supposer. Le corps est du base64 brut ; on l'ecrit
+    #  tel quel, le decodage se fait ensuite.
+    # ---------------------------------------------------------------
+    if ($morceaux[0] -eq "POST" -and $morceaux[1].StartsWith("/capture")) {
+      $sep = $requete.IndexOf("`r`n`r`n")
+      $lon = 0
+      foreach ($ligne in ($requete -split "`r`n")) {
+        if ($ligne -match '^(?i)content-length:\s*(\d+)') { $lon = [int]$matches[1] }
+      }
+      $corps = ""
+      if ($sep -ge 0) {
+        $debut = $sep + 4
+        $corps = $requete.Substring($debut)
+        $reste = $lon - $corps.Length
+        while ($reste -gt 0) {
+          $bt = New-Object byte[] 65536
+          $n2 = $flux.Read($bt, 0, [Math]::Min(65536, $reste))
+          if ($n2 -le 0) { break }
+          $corps += [System.Text.Encoding]::ASCII.GetString($bt, 0, $n2)
+          $reste -= $n2
+        }
+      }
+      $nom = "capture.txt"
+      if ($morceaux[1] -match 'n=([A-Za-z0-9_.-]+)') { $nom = $matches[1] }
+      try { [System.IO.File]::WriteAllText((Join-Path $dossier $nom), $corps) } catch {}
+      $tete = "HTTP/1.1 200 OK`r`nAccess-Control-Allow-Origin: *`r`nContent-Length: 2`r`nConnection: close`r`n`r`nok"
+      $ob = [System.Text.Encoding]::ASCII.GetBytes($tete)
+      $flux.Write($ob, 0, $ob.Length); $flux.Flush(); $client.Close()
+      Write-Host ("  CAPTURE  " + $nom + "  " + $corps.Length + " car.") -ForegroundColor Cyan
+      continue
+    }
+
     $chemin = ($morceaux[1] -split "\?")[0]
     $chemin = [System.Uri]::UnescapeDataString($chemin)
     if ($chemin -eq "/" -or $chemin -eq "") { $chemin = "/index.html" }

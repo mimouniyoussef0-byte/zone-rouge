@@ -15,3 +15,8 @@ Thumbs.db
 # outillage futur
 node_modules/
 dist/
+
+# images de controle du rendu, pas du code
+*.jpg
+*.png
+capture*.txt
