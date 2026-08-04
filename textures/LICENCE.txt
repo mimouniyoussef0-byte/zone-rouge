@@ -15,3 +15,14 @@ rugosite (rough). Trois cartes par matiere, neuf fichiers, 2,9 Mo.
 Elles ne sont PAS embarquees dans index.html : en base64 elles
 pesteraient un tiers de plus et il faudrait les decoder a chaque
 demarrage. Servies a cote, le navigateur les met en cache.
+
+--- ajout LOT 8 : les vraies matieres partout ---
+clay_roof_tiles       Poly Haven, CC0 — tuile canal, 4,00 m
+asphalt_04            Poly Haven, CC0 — bitume craquele, 4,04 m
+bark_platanus         Poly Haven, CC0 — ecorce de platane, 1,50 m
+baseball_playground   Poly Haven, CC0 — terre battue seche, 3,00 m
+
+Poly Haven place toute sa bibliotheque en CC0 (https://polyhaven.com/license).
+A noter : l'API ne publie AUCUN champ "license" par asset — la garantie est
+au niveau du site, pas de la fiche. Le champ "license" du swagger vaut AGPL
+et concerne le code de l'API, pas les textures.
